@@ -1,4 +1,4 @@
-# app-server
+# fablab-server [![Build Status](https://travis-ci.org/fau-fablab/app-server.svg?branch=master)](https://travis-ci.org/fau-fablab/app-server)
 
 app-server is a REST server based on [Dropwizard](http://www.dropwizard.io) which is currently used by the following apps:
 - [fablab-android](https://github.com/FAU-Inf2/fablab-android)
