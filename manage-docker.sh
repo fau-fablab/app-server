@@ -19,10 +19,10 @@ elif [ "$1" == "up" ]; then
         exit 1
     else
         docker build -t "${IMAGE}" .
-        docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${VOLUMES}" "${IMAGE}"
+        docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${IMAGE}"
     fi
 elif [ "$1" == "run" ]; then
-    docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${VOLUMES}" "${IMAGE}"
+    docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${IMAGE}"
 elif [ "$1" == "start" ]; then
     docker start "${CONTAINER}"
 elif [ "$1" == "stop" ]; then
