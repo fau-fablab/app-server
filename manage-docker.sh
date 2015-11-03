@@ -5,7 +5,6 @@ set -e
 IMAGE="app-server"
 CONTAINER="${IMAGE}"
 SHELL="bash"
-ENV_FILE="config.env"
 
 if [ $(whoami) != "root" ]; then echo "[i] this script has to be executed as root!" && exit 1; fi
 
