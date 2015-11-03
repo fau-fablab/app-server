@@ -6,8 +6,6 @@ IMAGE="app-server"
 CONTAINER="${IMAGE}"
 SHELL="bash"
 ENV_FILE="config.env"
-PORTS="-p 8081 -p 4433"
-VOLUMES="-v $(pwd)/conf/:/home/fablab/app-server/src/dist/"
 
 if [ $(whoami) != "root" ]; then echo "[i] this script has to be executed as root!" && exit 1; fi
 
@@ -21,10 +19,10 @@ elif [ "$1" == "up" ]; then
         exit 1
     else
         docker build -t "${IMAGE}" .
-        docker run -d --name="${CONTAINER}" "${PORTS}" "${VOLUMES}" "${IMAGE}"
+        docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${VOLUMES}" "${IMAGE}"
     fi
 elif [ "$1" == "run" ]; then
-    docker run -d --name="${CONTAINER}" "${PORTS}" "${VOLUMES}" "${IMAGE}"
+    docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${VOLUMES}" "${IMAGE}"
 elif [ "$1" == "start" ]; then
     docker start "${CONTAINER}"
 elif [ "$1" == "stop" ]; then
