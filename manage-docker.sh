@@ -4,6 +4,7 @@ set -e
 
 IMAGE="app-server"
 CONTAINER="${IMAGE}"
+CONF_DIR="./conf/"
 SHELL="bash"
 
 if [ $(whoami) != "root" ]; then echo "[i] this script has to be executed as root!" && exit 1; fi
@@ -13,15 +14,15 @@ if [ "$1" == "port" ]; then
 elif [ "$1" == "build" ]; then
     docker build -t "${IMAGE}" .
 elif [ "$1" == "up" ]; then
-    if [ ! -e conf/config.yml ] && [ ! -e conf/minimumVersion.yml ]; then
-        echo "[x] conf/config.yml or conf/minimumVersion.yml is missing"
+    if [ ! -e "${CONF_DIR}/config.yml" ] && [ ! -e "${CONF_DIR}/minimumVersion.yml" ]; then
+        echo "[x] ${CONF_DIR}/config.yml or ${CONF_DIR}/minimumVersion.yml is missing"
         exit 1
     else
         docker build -t "${IMAGE}" .
-        docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${IMAGE}"
+        docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/${CONF_DIR}/:/home/fablab/app-server/src/dist/ "${IMAGE}"
     fi
 elif [ "$1" == "run" ]; then
-    docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/conf/:/home/fablab/app-server/src/dist/ "${IMAGE}"
+    docker run -d --name="${CONTAINER}" -p 80 -p 8081 --volume=$(pwd)/${CONF_DIR}/:/home/fablab/app-server/src/dist/ "${IMAGE}"
 elif [ "$1" == "start" ]; then
     docker start "${CONTAINER}"
 elif [ "$1" == "stop" ]; then
