@@ -35,6 +35,8 @@ elif [ "$1" == "clean" ]; then
     fi
 elif [ "$1" == "shell" ]; then
     docker exec -it "${CONTAINER}" "${SHELL}"
+elif [ "$1" == "logs" ]; then
+    docker logs -f "${CONTAINER}"
 else
     echo "Usage: manage.sh [COMMAND]"
     echo ""
@@ -48,4 +50,5 @@ else
     echo "    clean    remove all persistent data"
     echo "    shell    attach to running container and run a shell"
     echo "    port     query the port where the appserver is bound to"
+    echo "    logs     tail the logs of dropwizard"
 fi
