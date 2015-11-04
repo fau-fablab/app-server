@@ -1,3 +1,6 @@
+# this is the main config for dropwizard
+# please refer to http://www.dropwizard.io/0.9.1/docs/manual/configuration.html
+
 logging:
   level: INFO
   appenders:
