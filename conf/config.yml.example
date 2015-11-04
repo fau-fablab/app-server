@@ -14,10 +14,6 @@ spaceapi:
   keyFile: src/dist/tuerstatus-appserver.key
   hashAlgorithm: HmacSHA256
 
-network:
-  hostname: app.example.com
-  adminPort: 8081
-
 server:
   requestLog:
     timeZone: UTC

@@ -1,8 +1,10 @@
 package de.fau.fablab.app.server.managed;
 
 import de.fau.fablab.app.server.configuration.AdminConfiguration;
-import de.fau.fablab.app.server.configuration.NetworkConfiguration;
+import io.dropwizard.jetty.HttpConnectorFactory;
 import io.dropwizard.lifecycle.Managed;
+import io.dropwizard.server.DefaultServerFactory;
+import io.dropwizard.server.ServerFactory;
 import it.sauronsoftware.cron4j.Scheduler;
 import org.apache.http.HttpResponse;
 import org.apache.http.auth.AuthScope;
@@ -25,18 +27,18 @@ public class UpdateDatabaseManager implements Managed {
     final String username;
     final String password;
     int port = -1;
-    String hostname;
+    String host;
 
     URL url;
     CloseableHttpClient httpClient;
     HttpClientContext httpClientContext;
 
-    public UpdateDatabaseManager(AdminConfiguration adminConfiguration, NetworkConfiguration networkConfiguration) {
+    public UpdateDatabaseManager(AdminConfiguration adminConfiguration, ServerFactory serverFactory) {
 
         this.username = adminConfiguration.getUsername();
         this.password = adminConfiguration.getPassword();
-        this.hostname = networkConfiguration.getHostname();
-        this.port = networkConfiguration.getAdminPort();
+        this.host = ((HttpConnectorFactory) ((DefaultServerFactory) serverFactory).getAdminConnectors().get(0)).getBindHost();
+        this.port = ((HttpConnectorFactory) ((DefaultServerFactory) serverFactory).getAdminConnectors().get(0)).getPort();
         httpClient = HttpClients.custom().build();
 
         Credentials adminCredentials = new UsernamePasswordCredentials(username, password);
@@ -66,7 +68,7 @@ public class UpdateDatabaseManager implements Managed {
     @Override
     public void start() throws MalformedURLException {
         if(port != -1){
-            url = new URL("http://"+hostname+":"+port+"/tasks/UpdateProductDatabaseTask");
+            url = new URL("http://"+host+":"+port+"/tasks/UpdateProductDatabaseTask");
             scheduler.start();
         }
     }

@@ -5,6 +5,7 @@ import de.fau.fablab.app.rest.core.User;
 import de.fau.fablab.app.server.configuration.*;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
+import io.dropwizard.server.ServerFactory;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -23,12 +24,6 @@ class ServerConfiguration extends Configuration
     @JsonProperty
     private SpaceApiConfiguration spaceapi;
     public SpaceApiConfiguration getSpaceApiConfiguration(){ return spaceapi; }
-
-    @NotNull
-    @Valid
-    @JsonProperty
-    private NetworkConfiguration network;
-    public NetworkConfiguration getNetworkConfiguration(){ return network; }
 
     @Valid
     @NotNull

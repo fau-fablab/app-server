@@ -168,7 +168,7 @@ class ServerApplication extends Application<ServerConfiguration> {
         PushFacade.getInstance().setDao(new PushDAO(hibernate.getSessionFactory()));
         environment.jersey().register(new PushResource());
 
-        UpdateDatabaseManager updateDatabaseManager = new UpdateDatabaseManager(configuration.getAdminConfiguration(), configuration.getNetworkConfiguration());
+        UpdateDatabaseManager updateDatabaseManager = new UpdateDatabaseManager(configuration.getAdminConfiguration(), configuration.getServerFactory());
         environment.lifecycle().manage(updateDatabaseManager);
     }
 
