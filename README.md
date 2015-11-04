@@ -9,12 +9,13 @@ app-server is a REST server based on [Dropwizard](http://www.dropwizard.io) whic
 
 The following files have to be present in order to run the server:
 
-- Apple Push Certificate
+- Apple Push certificate
 - Java Keystore with ssl cert inside
+- doorstate encryption key
 
 Copy them to `./conf`.
 
-After that you have to copy `app-server/src/dist/{config.yml.example,minimumVersion.yml.example}` to `app-server/src/dist/{config.yml,minimumVersion.yml}` and adapt them to your needs.
+After that you have to copy `conf/{config.yml.example,minimumVersion.yml.example}` to `conf/{config.yml,minimumVersion.yml}` and adapt them to your needs.
 
 Finally, build and run the server with
 
@@ -22,13 +23,7 @@ Finally, build and run the server with
 sudo ./manage-docker.sh up
 ```
 
-The container will listen on port 443 for application requests and port 8081 (SSL) for administrative requests. 
-
-To find where these ports are bound to execute
-
-```bash
-sudo ./manage-docker.sh port
-```
+The container will listen on port 80 for application requests and port 8081 (SSL) for administrative requests. These ports are bound to random ports on localhost. You can get them by running `sudo ./manage-docker.sh port`.
 
 ## Libraries
 fablab-server uses the following libraries and software:

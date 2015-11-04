@@ -13,8 +13,8 @@ if [ "$1" == "port" ]; then
 elif [ "$1" == "build" ]; then
     docker build -t "${IMAGE}" .
 elif [ "$1" == "up" ]; then
-    if [ ! -e app-server/src/dist/config.yml && ! -e app-server/src/dist/minimumVersion.yml ]; then
-        echo "[x] app-server/src/dist/config.yml or app-server/src/dist/minimumVersion.yml is missing"
+    if [ ! -e conf/config.yml ] && [ ! -e conf/minimumVersion.yml ]; then
+        echo "[x] conf/config.yml or conf/minimumVersion.yml is missing"
         exit 1
     else
         docker build -t "${IMAGE}" .
