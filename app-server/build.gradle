@@ -3,7 +3,7 @@ apply plugin: 'idea'
 apply plugin: 'application'
 
 //application entry point
-def mainClass = 'de.fau.cs.mad.fablab.rest.server.ServerApplication'
+def mainClass = 'de.fau.fablab.app.server.ServerApplication'
 //set the dropwizard version to use here
 def dropwizardVersion = '0.8.1'
 version = '0.1'
