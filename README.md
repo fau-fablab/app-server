@@ -5,7 +5,7 @@ app-server is a REST server based on [Dropwizard](http://www.dropwizard.io) whic
 - [fablab-iOS](https://github.com/FAU-Inf2/fablab-ios)
 - [fablab-HTML](https://github.com/FAU-Inf2/fablab-html)
 
-## Deployment
+## Deployment with Docker
 
 The following files have to be present in order to run the server:
 
@@ -23,7 +23,7 @@ Finally, build and run the server with
 sudo ./manage-docker.sh up
 ```
 
-The container will listen on port 80 for application requests and port 8081 (SSL) for administrative requests. These ports are bound to random ports on localhost. You can get them by running `sudo ./manage-docker.sh port`.
+The container will listen on port 80 for application requests and port 8081 for administrative requests. These ports are bound to random ports on localhost. You can get them by running `sudo ./manage-docker.sh port`.
 
 ## Libraries
 fablab-server uses the following libraries and software:
