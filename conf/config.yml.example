@@ -5,11 +5,6 @@ logging:
   level: INFO
   appenders:
     - type: console
-    - type: file
-      archive: false
-      currentLogFilename: src/dist/log/server_info.log
-      threshold: ALL
-      timeZone: UTC
   loggers:
     "de.fau.cs.mad.fablab.rest.server.resources.SpaceAPIResource": INFO
 
