@@ -6,7 +6,7 @@ logging:
   appenders:
     - type: console
   loggers:
-    "de.fau.cs.mad.fablab.rest.server.resources.SpaceAPIResource": INFO
+    "de.fau.fablab.app.server.resources.SpaceAPIResource": INFO
 
 spaceapi:
   endpoint: http://spaceapi.net
