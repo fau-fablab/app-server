@@ -1,9 +1,9 @@
 package de.fau.fablab.app.server.core.openerp;
 
-import de.fau.cs.mad.fablab.rest.core.Category;
-import de.fau.cs.mad.fablab.rest.core.Location;
-import de.fau.cs.mad.fablab.rest.core.Product;
-import de.fau.cs.mad.fablab.rest.core.UOM;
+import de.fau.fablab.app.rest.core.Category;
+import de.fau.fablab.app.rest.core.Location;
+import de.fau.fablab.app.rest.core.Product;
+import de.fau.fablab.app.rest.core.UOM;
 
 import java.util.List;
 

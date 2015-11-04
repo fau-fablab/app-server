@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core;
 
-import de.fau.cs.mad.fablab.rest.core.CartServer;
+import de.fau.fablab.app.rest.core.CartServer;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

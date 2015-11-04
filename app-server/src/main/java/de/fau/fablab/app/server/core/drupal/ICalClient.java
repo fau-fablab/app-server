@@ -6,7 +6,7 @@ import java.net.URL;
 import java.util.*;
 import java.util.Date;
 
-import de.fau.cs.mad.fablab.rest.core.ICal;
+import de.fau.fablab.app.rest.core.ICal;
 import de.fau.fablab.app.server.configuration.ICalConfiguration;
 
 import net.fortuna.ical4j.data.CalendarBuilder;

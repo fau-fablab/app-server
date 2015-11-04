@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.core;
 
-import de.fau.cs.mad.fablab.rest.core.CartServer;
-import de.fau.cs.mad.fablab.rest.core.CartStatus;
+import de.fau.fablab.app.rest.core.CartServer;
+import de.fau.fablab.app.rest.core.CartStatus;
 import de.fau.fablab.app.server.core.pushservice.PushFacade;
 
 public class CartFacade{

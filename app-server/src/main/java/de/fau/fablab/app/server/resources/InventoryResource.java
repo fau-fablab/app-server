@@ -1,10 +1,10 @@
 
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.InventoryApi;
-import de.fau.cs.mad.fablab.rest.core.InventoryItem;
-import de.fau.cs.mad.fablab.rest.core.Roles;
-import de.fau.cs.mad.fablab.rest.core.User;
+import de.fau.fablab.app.rest.api.InventoryApi;
+import de.fau.fablab.app.rest.core.InventoryItem;
+import de.fau.fablab.app.rest.core.Roles;
+import de.fau.fablab.app.rest.core.User;
 import de.fau.fablab.app.server.core.InventoryFacade;
 import de.fau.fablab.app.server.exceptions.Http401Exception;
 import io.dropwizard.auth.Auth;

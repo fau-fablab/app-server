@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core.pushservice;
 
-import de.fau.cs.mad.fablab.rest.core.*;
+import de.fau.fablab.app.rest.core.*;
 
 import java.util.HashMap;
 import java.util.List;

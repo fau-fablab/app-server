@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.core.drupal;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
-import de.fau.cs.mad.fablab.rest.core.News;
+import de.fau.fablab.app.rest.core.News;
 import de.fau.fablab.app.server.configuration.GeneralDataConfiguration;
 import de.fau.fablab.app.server.configuration.NewsConfiguration;
 

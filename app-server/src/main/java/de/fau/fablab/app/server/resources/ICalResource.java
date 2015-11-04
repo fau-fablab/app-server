@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.ICalApi;
-import de.fau.cs.mad.fablab.rest.core.ICal;
+import de.fau.fablab.app.rest.api.ICalApi;
+import de.fau.fablab.app.rest.core.ICal;
 
 import de.fau.fablab.app.server.core.ICalFacade;
 import de.fau.fablab.app.server.exceptions.Http400Exception;

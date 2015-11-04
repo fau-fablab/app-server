@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.core.projects;
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
-import de.fau.cs.mad.fablab.rest.core.ProjectFile;
-import de.fau.cs.mad.fablab.rest.core.ProjectImageUpload;
+import de.fau.fablab.app.rest.core.ProjectFile;
+import de.fau.fablab.app.rest.core.ProjectImageUpload;
 import de.fau.fablab.app.server.configuration.ProjectsConfiguration;
 import net.minidev.json.JSONObject;
 

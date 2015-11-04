@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.ProductApi;
-import de.fau.cs.mad.fablab.rest.core.Product;
+import de.fau.fablab.app.rest.api.ProductApi;
+import de.fau.fablab.app.rest.core.Product;
 import de.fau.fablab.app.server.core.ProductFacade;
 import io.dropwizard.hibernate.UnitOfWork;
 

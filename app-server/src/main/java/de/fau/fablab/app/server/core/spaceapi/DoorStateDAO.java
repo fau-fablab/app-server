@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core.spaceapi;
 
-import de.fau.cs.mad.fablab.rest.core.DoorState;
+import de.fau.fablab.app.rest.core.DoorState;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

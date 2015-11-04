@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.configuration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.fau.cs.mad.fablab.rest.core.PlatformType;
+import de.fau.fablab.app.rest.core.PlatformType;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;

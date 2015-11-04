@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.core.toolusage;
 
-import de.fau.cs.mad.fablab.rest.core.FabTool;
-import de.fau.cs.mad.fablab.rest.core.ToolUsage;
+import de.fau.fablab.app.rest.core.FabTool;
+import de.fau.fablab.app.rest.core.ToolUsage;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 

@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.tasks;
 
 import com.google.common.collect.ImmutableMultimap;
-import de.fau.cs.mad.fablab.rest.core.Category;
-import de.fau.cs.mad.fablab.rest.core.Product;
+import de.fau.fablab.app.rest.core.Category;
+import de.fau.fablab.app.rest.core.Product;
 import de.fau.fablab.app.server.core.openerp.OpenErpClient;
 import de.fau.fablab.app.server.core.openerp.OpenErpException;
 import de.fau.fablab.app.server.core.openerp.OpenErpInterface;

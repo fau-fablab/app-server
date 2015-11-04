@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core.spaceapi;
 
-import de.fau.cs.mad.fablab.rest.core.DoorState;
+import de.fau.fablab.app.rest.core.DoorState;
 import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import org.junit.Test;
 

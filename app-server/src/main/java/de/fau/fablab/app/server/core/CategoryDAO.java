@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core;
 
-import de.fau.cs.mad.fablab.rest.core.Category;
+import de.fau.fablab.app.rest.core.Category;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 

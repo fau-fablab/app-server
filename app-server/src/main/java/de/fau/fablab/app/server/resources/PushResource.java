@@ -1,9 +1,9 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.PushApi;
-import de.fau.cs.mad.fablab.rest.core.DoorState;
-import de.fau.cs.mad.fablab.rest.core.PushToken;
-import de.fau.cs.mad.fablab.rest.core.TriggerPushType;
+import de.fau.fablab.app.rest.api.PushApi;
+import de.fau.fablab.app.rest.core.DoorState;
+import de.fau.fablab.app.rest.core.PushToken;
+import de.fau.fablab.app.rest.core.TriggerPushType;
 import de.fau.fablab.app.server.core.pushservice.PushFacade;
 import io.dropwizard.hibernate.UnitOfWork;
 

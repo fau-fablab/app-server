@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.security;
 
 import com.google.common.base.Optional;
-import de.fau.cs.mad.fablab.rest.core.Roles;
-import de.fau.cs.mad.fablab.rest.core.User;
+import de.fau.fablab.app.rest.core.Roles;
+import de.fau.fablab.app.rest.core.User;
 import io.dropwizard.auth.AuthenticationException;
 import io.dropwizard.auth.Authenticator;
 import io.dropwizard.auth.basic.BasicCredentials;

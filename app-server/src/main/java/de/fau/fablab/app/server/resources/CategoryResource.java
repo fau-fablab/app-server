@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.resources;
 
 
-import de.fau.cs.mad.fablab.rest.api.CategoryApi;
-import de.fau.cs.mad.fablab.rest.core.Category;
+import de.fau.fablab.app.rest.api.CategoryApi;
+import de.fau.fablab.app.rest.core.Category;
 import de.fau.fablab.app.server.core.openerp.OpenErpClient;
 import de.fau.fablab.app.server.core.openerp.OpenErpInterface;
 import de.fau.fablab.app.server.core.CategoryFacade;

@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.core.pushservice;
 
-import de.fau.cs.mad.fablab.rest.core.PlatformType;
-import de.fau.cs.mad.fablab.rest.core.PushToken;
-import de.fau.cs.mad.fablab.rest.core.TriggerPushType;
+import de.fau.fablab.app.rest.core.PlatformType;
+import de.fau.fablab.app.rest.core.PushToken;
+import de.fau.fablab.app.rest.core.TriggerPushType;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

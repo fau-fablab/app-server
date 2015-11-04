@@ -2,8 +2,8 @@ package de.fau.fablab.app.server.resources;
 
 
 import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
-import de.fau.cs.mad.fablab.rest.api.SpaceApi;
-import de.fau.cs.mad.fablab.rest.core.DoorState;
+import de.fau.fablab.app.rest.api.SpaceApi;
+import de.fau.fablab.app.rest.core.DoorState;
 import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import de.fau.fablab.app.server.core.pushservice.PushFacade;
 import de.fau.fablab.app.server.core.spaceapi.DoorStateDAO;

@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.core.News;
-import de.fau.cs.mad.fablab.rest.api.NewsApi;
+import de.fau.fablab.app.rest.core.News;
+import de.fau.fablab.app.rest.api.NewsApi;
 import de.fau.fablab.app.server.core.NewsFacade;
 import de.fau.fablab.app.server.exceptions.Http400Exception;
 import de.fau.fablab.app.server.exceptions.Http404Exception;

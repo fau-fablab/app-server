@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.core.pushservice;
 
-import de.fau.cs.mad.fablab.rest.core.CartStatus;
-import de.fau.cs.mad.fablab.rest.core.DoorState;
-import de.fau.cs.mad.fablab.rest.core.PushToken;
+import de.fau.fablab.app.rest.core.CartStatus;
+import de.fau.fablab.app.rest.core.DoorState;
+import de.fau.fablab.app.rest.core.PushToken;
 
 import java.util.List;
 

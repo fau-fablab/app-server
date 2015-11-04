@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.core;
 
 
-import de.fau.cs.mad.fablab.rest.core.Product;
+import de.fau.fablab.app.rest.core.Product;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.*;
 import java.util.List;

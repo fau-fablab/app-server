@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.CartApi;
-import de.fau.cs.mad.fablab.rest.core.*;
+import de.fau.fablab.app.rest.api.CartApi;
+import de.fau.fablab.app.rest.core.*;
 import de.fau.fablab.app.server.core.CartFacade;
 import de.fau.fablab.app.server.exceptions.Http403Exception;
 import io.dropwizard.hibernate.UnitOfWork;

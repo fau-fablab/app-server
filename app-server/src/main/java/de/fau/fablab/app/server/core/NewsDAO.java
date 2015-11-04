@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core;
 
-import de.fau.cs.mad.fablab.rest.core.News;
+import de.fau.fablab.app.rest.core.News;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

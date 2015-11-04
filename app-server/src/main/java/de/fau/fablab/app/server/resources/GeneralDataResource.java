@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.DataApi;
-import de.fau.cs.mad.fablab.rest.core.MailAddresses;
+import de.fau.fablab.app.rest.api.DataApi;
+import de.fau.fablab.app.rest.core.MailAddresses;
 import de.fau.fablab.app.server.configuration.GeneralDataConfiguration;
 import de.fau.fablab.app.server.exceptions.Http404Exception;
 import de.fau.fablab.app.server.exceptions.Http500Exception;

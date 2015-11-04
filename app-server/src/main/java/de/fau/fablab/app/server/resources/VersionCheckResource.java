@@ -1,9 +1,9 @@
 package de.fau.fablab.app.server.resources;
 
 import com.fasterxml.jackson.dataformat.yaml.snakeyaml.Yaml;
-import de.fau.cs.mad.fablab.rest.api.VersionCheckApi;
-import de.fau.cs.mad.fablab.rest.core.PlatformType;
-import de.fau.cs.mad.fablab.rest.core.UpdateStatus;
+import de.fau.fablab.app.rest.api.VersionCheckApi;
+import de.fau.fablab.app.rest.core.PlatformType;
+import de.fau.fablab.app.rest.core.UpdateStatus;
 import de.fau.fablab.app.server.configuration.MinimumVersionConfiguration;
 import de.fau.fablab.app.server.configuration.MinimumVersionFileConfiguration;
 import de.fau.fablab.app.server.exceptions.Http404Exception;

@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server.resources;
 
-import de.fau.cs.mad.fablab.rest.api.UserApi;
-import de.fau.cs.mad.fablab.rest.core.User;
+import de.fau.fablab.app.rest.api.UserApi;
+import de.fau.fablab.app.rest.core.User;
 import io.dropwizard.auth.Auth;
 
 /**

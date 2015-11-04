@@ -5,7 +5,7 @@ import com.thetransactioncompany.jsonrpc2.JSONRPC2Request;
 import com.thetransactioncompany.jsonrpc2.JSONRPC2Response;
 import com.thetransactioncompany.jsonrpc2.client.JSONRPC2Session;
 import com.thetransactioncompany.jsonrpc2.client.JSONRPC2SessionException;
-import de.fau.cs.mad.fablab.rest.core.Product;
+import de.fau.fablab.app.rest.core.Product;
 import net.minidev.json.JSONArray;
 import net.minidev.json.JSONObject;
 

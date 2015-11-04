@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.core.drupal;
 
-import de.fau.cs.mad.fablab.rest.core.ICal;
+import de.fau.fablab.app.rest.core.ICal;
 
 import java.util.Comparator;
 

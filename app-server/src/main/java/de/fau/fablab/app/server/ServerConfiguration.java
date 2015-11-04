@@ -1,7 +1,7 @@
 package de.fau.fablab.app.server;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import de.fau.cs.mad.fablab.rest.core.User;
+import de.fau.fablab.app.rest.core.User;
 import de.fau.fablab.app.server.configuration.*;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;

@@ -1,10 +1,10 @@
 package de.fau.fablab.app.server.resources;
 
 
-import de.fau.cs.mad.fablab.rest.api.ContactApi;
-import de.fau.cs.mad.fablab.rest.core.CartEntryServer;
-import de.fau.cs.mad.fablab.rest.core.CartServer;
-import de.fau.cs.mad.fablab.rest.core.CartStatus;
+import de.fau.fablab.app.rest.api.ContactApi;
+import de.fau.fablab.app.rest.core.CartEntryServer;
+import de.fau.fablab.app.rest.core.CartServer;
+import de.fau.fablab.app.rest.core.CartStatus;
 
 
 import javax.ws.rs.core.Response;

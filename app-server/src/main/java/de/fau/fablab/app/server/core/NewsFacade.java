@@ -1,5 +1,5 @@
 package de.fau.fablab.app.server.core;
-import de.fau.cs.mad.fablab.rest.core.News;
+import de.fau.fablab.app.rest.core.News;
 import de.fau.fablab.app.server.core.drupal.NewsFeedClient;
 import de.fau.fablab.app.server.core.drupal.NewsInterface;
 

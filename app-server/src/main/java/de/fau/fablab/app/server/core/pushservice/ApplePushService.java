@@ -11,7 +11,7 @@ import com.relayrides.pushy.apns.util.MalformedTokenStringException;
 import com.relayrides.pushy.apns.util.SSLContextUtil;
 import com.relayrides.pushy.apns.util.SimpleApnsPushNotification;
 import com.relayrides.pushy.apns.util.TokenUtil;
-import de.fau.cs.mad.fablab.rest.core.TriggerPushType;
+import de.fau.fablab.app.rest.core.TriggerPushType;
 import de.fau.fablab.app.server.configuration.ApplePushConfiguration;
 
 import java.io.IOException;
