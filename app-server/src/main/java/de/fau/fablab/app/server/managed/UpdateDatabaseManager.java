@@ -66,7 +66,7 @@ public class UpdateDatabaseManager implements Managed {
     @Override
     public void start() throws MalformedURLException {
         if(port != -1){
-            url = new URL("https://"+hostname+":"+port+"/tasks/UpdateProductDatabaseTask");
+            url = new URL("http://"+hostname+":"+port+"/tasks/UpdateProductDatabaseTask");
             scheduler.start();
         }
     }
