@@ -17,6 +17,6 @@ WORKDIR /home/fablab/app-server
 
 RUN ./gradlew build
 
-EXPOSE 4433 8081
+EXPOSE 80 8081
 
 CMD ./gradlew run
