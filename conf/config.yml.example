@@ -22,12 +22,6 @@ server:
     timeZone: UTC
     appenders:
       - type: console
-      - type: file
-        currentLogFilename: src/dist/log/server_requests.log
-        threshold: ALL
-        archive: true
-        archivedLogFilenamePattern: src/dist/log/request.%d.log.gz
-        archivedFileCount: 5
   # rest server
   applicationConnectors:
     - type: http
