@@ -34,7 +34,7 @@ class ServerConfiguration extends Configuration
     @NotNull
     @JsonProperty
     private DataSourceFactory database = new DataSourceFactory();
-    public DataSourceFactory getDatabase() {
+    public DataSourceFactory getDatabaseConfiguration() {
         return database;
     }
 
@@ -65,20 +65,20 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private ToolsConfiguration toolsConfiguration = new ToolsConfiguration();
-    public ToolsConfiguration getToolsConfiguration() { return toolsConfiguration; }
+    private ToolsConfiguration tools = new ToolsConfiguration();
+    public ToolsConfiguration getToolsConfiguration() { return tools; }
 
     @Valid
     @NotNull
     @JsonProperty
-    private GeneralConfiguration generalConfiguration = new GeneralConfiguration();
-    public GeneralConfiguration getGeneralConfiguration() { return generalConfiguration; }
+    private GeneralConfiguration general = new GeneralConfiguration();
+    public GeneralConfiguration getGeneralConfiguration() { return general; }
 
     @Valid
     @NotNull
     @JsonProperty
     private ProjectsConfiguration projects = new ProjectsConfiguration();
-    public ProjectsConfiguration getProjectsConfigurationConfiguration() { return projects; }
+    public ProjectsConfiguration getProjectsConfiguration() { return projects; }
 
     @Valid
     @NotNull

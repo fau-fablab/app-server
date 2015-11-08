@@ -76,7 +76,7 @@ class ServerApplication extends Application<ServerConfiguration> {
 
         CacheBuilderSpec.disableCaching();
 
-        exportDatabaseSchema(configuration.getDatabase());
+        exportDatabaseSchema(configuration.getDatabaseConfiguration());
 
         // add health check and resource to our jersey environment
         environment.healthChecks().register("DBHealthCheck", new DatabaseHealthCheck(hibernate));
@@ -94,7 +94,7 @@ class ServerApplication extends Application<ServerConfiguration> {
         ToolsClient.setConfiguration(configuration.getToolsConfiguration(), configuration.getGeneralConfiguration());
 
         // configure ProjectsClient
-        ProjectsClient.setConfiguration(configuration.getProjectsConfigurationConfiguration());
+        ProjectsClient.setConfiguration(configuration.getProjectsConfiguration());
 
         // configure date format for jackson
         //environment.getObjectMapper().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
@@ -196,7 +196,7 @@ class ServerApplication extends Application<ServerConfiguration> {
             ToolUsage.class) {
         @Override
         public DataSourceFactory getDataSourceFactory(ServerConfiguration configuration) {
-            return configuration.getDatabase();
+            return configuration.getDatabaseConfiguration();
         }
     };
 
