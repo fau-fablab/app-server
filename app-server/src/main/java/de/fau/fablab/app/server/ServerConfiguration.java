@@ -71,8 +71,8 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private GeneralDataConfiguration generalData = new GeneralDataConfiguration();
-    public GeneralDataConfiguration getGeneralDataConfiguration() { return generalData; }
+    private GeneralConfiguration generalConfiguration = new GeneralConfiguration();
+    public GeneralConfiguration getGeneralConfiguration() { return generalConfiguration; }
 
     @Valid
     @NotNull

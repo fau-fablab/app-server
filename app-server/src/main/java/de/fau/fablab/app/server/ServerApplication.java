@@ -88,10 +88,10 @@ class ServerApplication extends Application<ServerConfiguration> {
         ICalClient.setConfiguration(configuration.getEventsConfiguration());
 
         // configure NewsClient
-        NewsFeedClient.setConfiguration(configuration.getNewsConfiguration(), configuration.getGeneralDataConfiguration());
+        NewsFeedClient.setConfiguration(configuration.getNewsConfiguration(), configuration.getGeneralConfiguration());
 
         // configure ToolsClient
-        ToolsClient.setConfiguration(configuration.getToolsConfiguration(), configuration.getGeneralDataConfiguration());
+        ToolsClient.setConfiguration(configuration.getToolsConfiguration(), configuration.getGeneralConfiguration());
 
         // configure ProjectsClient
         ProjectsClient.setConfiguration(configuration.getProjectsConfigurationConfiguration());
@@ -124,7 +124,7 @@ class ServerApplication extends Application<ServerConfiguration> {
 
         environment.jersey().register(new UserResource());
         environment.jersey().register(new ContactReource());
-        environment.jersey().register(new GeneralDataResource(configuration.getGeneralDataConfiguration()));
+        environment.jersey().register(new GeneralDataResource(configuration.getGeneralConfiguration()));
         environment.jersey().register(new ProjectsResource());
         environment.jersey().register(new CategoryResource(new CategoryFacade(new CategoryDAO(hibernate.getSessionFactory()))));
 

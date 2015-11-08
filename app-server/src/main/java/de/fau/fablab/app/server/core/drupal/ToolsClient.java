@@ -2,7 +2,7 @@ package de.fau.fablab.app.server.core.drupal;
 
 import de.fau.fablab.app.rest.core.FabTool;
 import de.fau.fablab.app.server.configuration.ToolsConfiguration;
-import de.fau.fablab.app.server.configuration.GeneralDataConfiguration;
+import de.fau.fablab.app.server.configuration.GeneralConfiguration;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -18,7 +18,7 @@ public class ToolsClient implements DrupalInterface {
 
     private static DrupalInterface instance;
     private static ToolsConfiguration toolsConfiguration = null;
-    private static GeneralDataConfiguration generalDataConfiguration = null;
+    private static GeneralConfiguration generalConfiguration = null;
 
     private String toolsUrl;
     private String fabUrl;
@@ -54,13 +54,13 @@ public class ToolsClient implements DrupalInterface {
             System.exit(1);
         }
 
-        fabUrl = generalDataConfiguration.getFabUrl();
+        fabUrl = generalConfiguration.getUrl();
         toolsUrl = toolsConfiguration.getUrl();
     }
 
-    public static void setConfiguration(ToolsConfiguration tConf, GeneralDataConfiguration dConf) {
+    public static void setConfiguration(ToolsConfiguration tConf, GeneralConfiguration dConf) {
         toolsConfiguration = tConf;
-        generalDataConfiguration = dConf;
+        generalConfiguration = dConf;
     }
 
     /***

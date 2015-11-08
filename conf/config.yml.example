@@ -72,10 +72,11 @@ news:
 tools:
     url: https://example.com/tool
 
-generalData:
-    fabMail: mail@example.com
-    feedbackMail: mail@example.com
-    fabUrl: https://example.com
+# general data about the fablab
+general:
+    eMail: mail@example.com
+    feedbackEMail: mail@example.com
+    url: https://example.com
 
 androidPushConfiguration:
     pushAPIRegistrationId: myapikey
