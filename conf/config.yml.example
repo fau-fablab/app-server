@@ -28,24 +28,14 @@ server:
         archive: true
         archivedLogFilenamePattern: src/dist/log/request.%d.log.gz
         archivedFileCount: 5
-
+  # rest server
   applicationConnectors:
-    - type: https
-      port: 443
-      keyStorePath: src/dist/server.keystore
-      keyStorePassword: changeme
-      trustStorePath: src/dist/server.truststore
-      certAlias: prodca
-      validateCerts: true
-
+    - type: http
+      port: 80 
+  # admin interface
   adminConnectors:
-    - type: https
+    - type: http
       port: 8081
-      keyStorePath: src/dist/server.keystore
-      keyStorePassword: changeme
-      trustStorePath: src/dist/server.truststore
-      certAlias: prodca
-      validateCerts: true
 
 # H2 DB
 database:
