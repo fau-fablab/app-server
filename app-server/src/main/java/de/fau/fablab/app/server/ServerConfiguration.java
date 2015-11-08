@@ -89,8 +89,8 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private ApplePushConfiguration applePushConfiguration = new ApplePushConfiguration();
-    public ApplePushConfiguration getApplePushConfiguration() { return applePushConfiguration; }
+    private ApplePushConfiguration applePush = new ApplePushConfiguration();
+    public ApplePushConfiguration getApplePushConfiguration() { return applePush; }
 
     @NotNull
     @JsonProperty

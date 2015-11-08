@@ -82,7 +82,7 @@ androidPush:
     apiKey: myapikey
     url: https://android.clients.google.com/gcm/send
 
-applePushConfiguration:
+applePush:
   certificate: src/dist/APN.p12
   password: changeme
 
