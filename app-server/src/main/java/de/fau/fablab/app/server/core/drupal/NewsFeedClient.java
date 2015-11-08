@@ -19,11 +19,11 @@ import java.util.*;
 public class NewsFeedClient implements NewsInterface {
 
     private static NewsInterface instance;
-    private static NewsConfiguration config = null;
+    private static NewsConfiguration newsConfiguration = null;
     private static GeneralDataConfiguration dataConfig = null;
 
     private String fabUrl;
-    private String feedUrl;
+    private String url;
 
     private LinkedList<News> allNews;
 
@@ -53,18 +53,18 @@ public class NewsFeedClient implements NewsInterface {
      * If any environment variable is missing, it will shutdown the whole application with exit code 1
      */
     private NewsFeedClient() {
-        if (config == null || !config.validate()) {
+        if (newsConfiguration == null || !newsConfiguration.validate()) {
             System.err.println("ERROR while initializing NewsFeedClient. Configuration vars missing.\n" +
-                    "The configuration (faburl and feedurl) has to be set \n " +
+                    "The configuration (faburl and url) has to be set \n " +
                     "using the class NewsConfiguration.\n");
             System.exit(1);
         }
         fabUrl = dataConfig.getFabUrl();
-        feedUrl = config.getFeedurl();
+        url = newsConfiguration.getUrl();
     }
 
-    public static void setConfiguration(NewsConfiguration c, GeneralDataConfiguration dc) {
-        config = c;
+    public static void setConfiguration(NewsConfiguration nConf, GeneralDataConfiguration dc) {
+        newsConfiguration = nConf;
         dataConfig = dc;
     }
 
@@ -159,18 +159,18 @@ public class NewsFeedClient implements NewsInterface {
     }
 
     /***
-     * Retrieves the RSS-Feed from the given faburl + feedurl and updates the News-List
+     * Retrieves the RSS-Feed from the given feedurl and updates the News-List
      *
      */
     private void updateNews() {
         URL url = null;
 
         try {
-            url = new URL(fabUrl + feedUrl);
+            url = new URL(this.url);
         } catch (MalformedURLException e) {
             System.err.println("ERROR - MalformedURLException while updating News. \n" +
                     "The Reason is : " + e.getMessage() + "\n" +
-                    "Url was : " + fabUrl + feedUrl);
+                    "Url was : " + this.url);
         }
 
         RSSFeed feed = null;
@@ -292,7 +292,7 @@ public class NewsFeedClient implements NewsInterface {
     }
 
     private RSSFeed tryFallback() throws IOException {
-        InputStreamReader reader = new InputStreamReader(new FileInputStream(config.getFallback()));
+        InputStreamReader reader = new InputStreamReader(new FileInputStream(newsConfiguration.getFallback()));
 
         XmlMapper mapper = new XmlMapper();
 

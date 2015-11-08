@@ -62,12 +62,14 @@ events:
     # optional fallback in case 'url' cannot be reached
     fallback: src/dist/calendar.ics
 
-drupalNews:
-    feedurl: /rss.xml
-    url: 127.0.0.1
-    port: 12345
-    nodeEndpoint: /rest/node
+# endpoint to process news in rss format
+news:
+    url: https://example.com/rss.xml
+    # optional fallback in case 'url' cannot be reached
     fallback: src/dist/rss.xml.rss
+
+tools:
+    url: https://example.com/tool
 
 generalData:
     fabMail: mail@example.com

@@ -59,8 +59,14 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private NewsConfiguration drupalNews = new NewsConfiguration();
-    public NewsConfiguration getNewsConfiguration() { return drupalNews; }
+    private NewsConfiguration news = new NewsConfiguration();
+    public NewsConfiguration getNewsConfiguration() { return news; }
+
+    @Valid
+    @NotNull
+    @JsonProperty
+    private ToolsConfiguration toolsConfiguration = new ToolsConfiguration();
+    public ToolsConfiguration getToolsConfiguration() { return toolsConfiguration; }
 
     @Valid
     @NotNull

@@ -1,8 +1,8 @@
 package de.fau.fablab.app.server.core.drupal;
 
 import de.fau.fablab.app.rest.core.FabTool;
+import de.fau.fablab.app.server.configuration.ToolsConfiguration;
 import de.fau.fablab.app.server.configuration.GeneralDataConfiguration;
-import de.fau.fablab.app.server.configuration.NewsConfiguration;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,13 +14,12 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-public class DrupalClient implements DrupalInterface {
+public class ToolsClient implements DrupalInterface {
 
     private static DrupalInterface instance;
-    private static NewsConfiguration config = null;
-    private static GeneralDataConfiguration dataConfig = null;
+    private static ToolsConfiguration toolsConfiguration = null;
+    private static GeneralDataConfiguration generalDataConfiguration = null;
 
-    private String baseUrl;
     private String toolsUrl;
     private String fabUrl;
 
@@ -38,7 +37,7 @@ public class DrupalClient implements DrupalInterface {
      */
     public static DrupalInterface getInstance() {
         if (instance == null) {
-            instance = new DrupalClient();
+            instance = new ToolsClient();
         }
         return instance;
     }
@@ -47,21 +46,21 @@ public class DrupalClient implements DrupalInterface {
      * Checks for valid configuration and sets necessary urls
      * If any environment variable is missing, it will shutdown the whole application with exit code 1
      */
-    private DrupalClient() {
-        if (config == null || !config.validate()) {
-            System.err.println("ERROR while initializing DrupalClient. Configuration vars missing.\n" +
+    private ToolsClient() {
+        if (toolsConfiguration == null || !toolsConfiguration.validate()) {
+            System.err.println("ERROR while initializing ToolsClient. Configuration vars missing.\n" +
                     "The configuration (url, port and endpoint) has to be set \n " +
-                    "using the class NewsConfiguration.\n");
+                    "using the class ToolsConfiguration.\n");
             System.exit(1);
         }
-        
-        fabUrl = dataConfig.getFabUrl();
-        toolsUrl = fabUrl + "/tool";
+
+        fabUrl = generalDataConfiguration.getFabUrl();
+        toolsUrl = toolsConfiguration.getUrl();
     }
 
-    public static void setConfiguration(NewsConfiguration c, GeneralDataConfiguration dc) {
-        config = c;
-        dataConfig = dc;
+    public static void setConfiguration(ToolsConfiguration tConf, GeneralDataConfiguration dConf) {
+        toolsConfiguration = tConf;
+        generalDataConfiguration = dConf;
     }
 
     /***

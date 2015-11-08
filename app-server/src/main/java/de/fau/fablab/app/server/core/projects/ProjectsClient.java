@@ -47,7 +47,7 @@ public class ProjectsClient implements ProjectsInterface {
         if (config == null || !config.validate()) {
             System.err.println("ERROR while initializing NewsClient. Configuration vars missing.\n" +
                     "The configuration (url, port and endpoint) has to be set \n " +
-                    "using the class NewsConfiguration.\n");
+                    "using the class ToolsConfiguration.\n");
             System.exit(1);
         }
 

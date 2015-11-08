@@ -2,7 +2,7 @@ package de.fau.fablab.app.server.core;
 
 import de.fau.fablab.app.rest.core.FabTool;
 import de.fau.fablab.app.server.core.drupal.DrupalInterface;
-import de.fau.fablab.app.server.core.drupal.DrupalClient;
+import de.fau.fablab.app.server.core.drupal.ToolsClient;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class DrupalFacade {
 
     public DrupalFacade(DrupalDAO dao) {
         this.dao = dao;
-        this.drupalInterface = DrupalClient.getInstance();
+        this.drupalInterface = ToolsClient.getInstance();
     }
 
     public FabTool findToolById(Long id) {

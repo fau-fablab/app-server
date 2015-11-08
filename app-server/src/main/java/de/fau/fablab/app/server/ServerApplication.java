@@ -12,7 +12,7 @@ import de.fau.fablab.app.server.resources.*;
 import de.fau.fablab.app.server.security.AdminConstraintSecurityHandler;
 import de.fau.fablab.app.server.security.SimpleAuthenticator;
 import de.fau.fablab.app.server.tasks.UpdateProductDatabaseTask;
-import de.fau.fablab.app.server.core.drupal.DrupalClient;
+import de.fau.fablab.app.server.core.drupal.ToolsClient;
 import de.fau.fablab.app.server.core.drupal.NewsFeedClient;
 import de.fau.fablab.app.server.core.projects.ProjectsClient;
 import de.fau.fablab.app.server.core.pushservice.AndroidPushManager;
@@ -90,8 +90,8 @@ class ServerApplication extends Application<ServerConfiguration> {
         // configure NewsClient
         NewsFeedClient.setConfiguration(configuration.getNewsConfiguration(), configuration.getGeneralDataConfiguration());
 
-        // configure DrupalClient
-        DrupalClient.setConfiguration(configuration.getNewsConfiguration(), configuration.getGeneralDataConfiguration());
+        // configure ToolsClient
+        ToolsClient.setConfiguration(configuration.getToolsConfiguration(), configuration.getGeneralDataConfiguration());
 
         // configure ProjectsClient
         ProjectsClient.setConfiguration(configuration.getProjectsConfigurationConfiguration());
