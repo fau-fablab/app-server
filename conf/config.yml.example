@@ -78,9 +78,9 @@ general:
     feedbackEMail: mail@example.com
     url: https://example.com
 
-androidPushConfiguration:
-    pushAPIRegistrationId: myapikey
-    googlePushServiceURL: https://android.clients.google.com/gcm/send
+androidPush:
+    apiKey: myapikey
+    url: https://android.clients.google.com/gcm/send
 
 applePushConfiguration:
   certificate: src/dist/APN.p12

@@ -8,26 +8,24 @@ public class AndroidPushConfiguration {
 
     @NotEmpty
     @JsonProperty
-    private String pushAPIRegistrationId;
+    private String apiKey;
 
     @NotEmpty
     @JsonProperty
-    private String googlePushServiceURL;
+    private String url;
 
-    public void setGooglePushServiceURL(String aGooglePushServiceURL) {
-        googlePushServiceURL = aGooglePushServiceURL;
+    public void setUrl(String newUrl) {
+        url = newUrl;
     }
 
-    public String getGooglePushServiceURL() {
-        return googlePushServiceURL;
+    public String getUrl() {
+        return url;
     }
 
-    public void setPushAPIRegistrationId(String aPushAPIRegistrationId) {
-        pushAPIRegistrationId = aPushAPIRegistrationId;
-    }
+    public void setApiKey(String newApiKey) { apiKey = newApiKey; }
 
-    public String getPushAPIRegistrationId() {
-        return pushAPIRegistrationId;
+    public String getApiKey() {
+        return apiKey;
     }
 
 }

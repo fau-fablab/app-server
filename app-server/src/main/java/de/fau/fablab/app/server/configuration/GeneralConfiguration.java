@@ -37,7 +37,7 @@ public class GeneralConfiguration {
     public void seteMail(String eMail) {
         this.eMail = eMail;
     }
-    
+
     public String getFeedbackEMail() {
         return feedbackEMail;
     }

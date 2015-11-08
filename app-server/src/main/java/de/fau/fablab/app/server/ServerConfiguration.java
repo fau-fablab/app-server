@@ -83,8 +83,8 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private AndroidPushConfiguration androidPushConfiguration = new AndroidPushConfiguration();
-    public AndroidPushConfiguration getAndroidPushConfiguration() { return androidPushConfiguration; }
+    private AndroidPushConfiguration androidPush = new AndroidPushConfiguration();
+    public AndroidPushConfiguration getAndroidPushConfiguration() { return androidPush; }
 
     @Valid
     @NotNull

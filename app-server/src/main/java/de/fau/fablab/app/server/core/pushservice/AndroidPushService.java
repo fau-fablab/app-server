@@ -22,7 +22,7 @@ public class AndroidPushService {
     }
 
     public void pushJson(AndroidPushContent aPushContent) throws IOException{
-        URL url = new URL(mPushServiceConfiguration.getGooglePushServiceURL());
+        URL url = new URL(mPushServiceConfiguration.getUrl());
         HttpsURLConnection
                 .setDefaultHostnameVerifier(new CustomizedHostnameVerifier());
         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) url.openConnection();
@@ -30,7 +30,7 @@ public class AndroidPushService {
         httpsURLConnection.setUseCaches(false);
         httpsURLConnection.setRequestMethod("POST");
         httpsURLConnection.setRequestProperty("Content-Type", "application/json");
-        httpsURLConnection.setRequestProperty("Authorization", "key=" + mPushServiceConfiguration.getPushAPIRegistrationId());
+        httpsURLConnection.setRequestProperty("Authorization", "key=" + mPushServiceConfiguration.getApiKey());
 
         ObjectMapper mapper = new ObjectMapper();
         DataOutputStream wr = new DataOutputStream(httpsURLConnection.getOutputStream());
