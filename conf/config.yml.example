@@ -68,6 +68,7 @@ news:
     # optional fallback in case 'url' cannot be reached
     fallback: src/dist/rss.xml.rss
 
+# endpoint to get all available tools from
 tools:
     url: https://example.com/tool
 
