@@ -31,7 +31,7 @@ server:
     - type: http
       port: 8081
 
-# H2 DB
+# dropwizard database configuration
 database:
     driverClass: org.h2.Driver
     user: db
