@@ -49,6 +49,7 @@ adminInterface:
     username: admin
     password: changeme
 
+# endpoint to connect to an openerp instance
 openerp:
     username: oerp
     password: changeme
