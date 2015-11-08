@@ -11,7 +11,10 @@ logging:
 spaceapi:
   endpoint: http://spaceapi.net
   space: my_fablab
-  keyFile: src/dist/tuerstatus-appserver.key
+
+# endpoint to process changes of the doorstate
+doorstate:
+  keyFile: src/dist/keys/doorstate.key
   hashAlgorithm: HmacSHA256
 
 server:

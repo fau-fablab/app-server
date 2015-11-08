@@ -28,6 +28,12 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
+    private DoorStateConfiguration doorState;
+    public DoorStateConfiguration getDoorStateConfiguration(){ return doorState; }
+
+    @Valid
+    @NotNull
+    @JsonProperty
     private DataSourceFactory database = new DataSourceFactory();
     public DataSourceFactory getDatabase() {
         return database;

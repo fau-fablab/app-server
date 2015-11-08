@@ -28,43 +28,9 @@ import javax.ws.rs.client.WebTarget;
 public class SpaceAPIResource implements SpaceApi
 {
     private final SpaceApiConfiguration mConfig;
-    private final DoorStateDAO mDAO;
-    private final Logger mLogger;
 
-    public SpaceAPIResource(SpaceApiConfiguration aConfig, DoorStateDAO aDAO) {
+    public SpaceAPIResource(SpaceApiConfiguration aConfig) {
         mConfig = aConfig;
-        mDAO = aDAO;
-        mLogger = LoggerFactory.getLogger(SpaceAPIResource.class);
-    }
-
-    @Override
-    @UnitOfWork
-    public String updateDoorState(String hash, String data) {
-
-        if (hash == null || data == null || hash.isEmpty() || data.isEmpty())
-            throw new BadRequestException("no credentials provided");
-
-        if (mConfig.getKeyFile() == null || mConfig.getKeyFile().isEmpty() ||
-                mConfig.getHashAlgorithm() == null || mConfig.getHashAlgorithm().isEmpty())
-            throw new ServiceUnavailableException("key file or hash algorithm is missing in configuration");
-
-        DoorStateRequest request = DoorStateRequest.fromData(mConfig, hash, data);
-        DoorState oldState = mDAO.getLastState();
-        DoorState newState = request.getDoorState();
-
-        // if there is no oldState use current state
-        if (oldState == null)
-            mDAO.saveState(newState);
-
-        if (request.checkIfChanged(oldState)) {
-            mLogger.info("DoorState changed, firing push event. Current state is " + newState);
-            mDAO.saveState(newState);
-
-            if(newState.state.equals(DoorState.State.open))
-                PushFacade.getInstance().fablabDoorJustOpened(newState);
-        }
-
-        return "{\"success\":\"true\", \"state\":\"" + newState.state + "\"}";
     }
 
     @Override

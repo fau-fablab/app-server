@@ -1,6 +1,7 @@
 package de.fau.fablab.app.server.core.spaceapi;
 
 import de.fau.fablab.app.rest.core.DoorState;
+import de.fau.fablab.app.server.configuration.DoorStateConfiguration;
 import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import org.junit.Test;
 
@@ -18,14 +19,14 @@ public class DoorStateRequestTest {
     @Test(expected = ServiceUnavailableException.class)
     public void testUpdateDoorStateUnconfigured() throws Exception {
 
-        DoorStateRequest request = DoorStateRequest.fromData(new SpaceApiConfiguration(), "hash", "data");
+        DoorStateRequest request = DoorStateRequest.fromData(new DoorStateConfiguration(), "hash", "data");
     }
 
     // parsing data should return valid values
     @Test
     public void testParseDataOpen()
     {
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = request.parseData("12345:open");
         assertEquals(data.time, 12345);
         assertEquals(data.state, DoorState.State.open);
@@ -34,7 +35,7 @@ public class DoorStateRequestTest {
     @Test
     public void testParseDataClosed()
     {
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = request.parseData("456789:close");
         assertEquals(data.time, 456789);
         assertEquals(data.state, DoorState.State.close);
@@ -44,7 +45,7 @@ public class DoorStateRequestTest {
     @Test(expected = BadRequestException.class)
     public void testParseDataOpenExpectedFailLess()
     {
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = request.parseData("open:");
     }
 
@@ -52,7 +53,7 @@ public class DoorStateRequestTest {
     @Test(expected = BadRequestException.class)
     public void testParseDataOpenExpectedFailMore()
     {
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = request.parseData("open:12345:fail");
     }
 
@@ -60,7 +61,7 @@ public class DoorStateRequestTest {
     @Test(expected = BadRequestException.class)
     public void testParseDataOpenExpectedFailInvalid()
     {
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = request.parseData("12345:hangingdoor");
     }
 
@@ -68,7 +69,7 @@ public class DoorStateRequestTest {
     public void testCheckDataValid()
     {
         long currentTime = System.currentTimeMillis() / 1000L;
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = new DoorState(String.valueOf(currentTime) + ":open");
 
         boolean checkResult = request.checkData(data);
@@ -80,7 +81,7 @@ public class DoorStateRequestTest {
     public void testCheckDataInValidPast()
     {
         long currentTime = System.currentTimeMillis() / 1000L;
-        DoorStateRequest request = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest request = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = new DoorState(String.valueOf(currentTime - 1000) + ":open");
 
         boolean checkResult = request.checkData(data);
@@ -92,7 +93,7 @@ public class DoorStateRequestTest {
     public void testCheckDataInValidFuture()
     {
         long currentTime = System.currentTimeMillis() / 1000L;
-        DoorStateRequest resource = new DoorStateRequest(new SpaceApiConfiguration());
+        DoorStateRequest resource = new DoorStateRequest(new DoorStateConfiguration());
         DoorState data = new DoorState(String.valueOf(currentTime + 1000) + ":open");
 
         boolean checkResult = resource.checkData(data);

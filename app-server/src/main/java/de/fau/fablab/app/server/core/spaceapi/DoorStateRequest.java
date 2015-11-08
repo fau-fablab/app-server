@@ -1,6 +1,7 @@
 package de.fau.fablab.app.server.core.spaceapi;
 
 import de.fau.fablab.app.rest.core.DoorState;
+import de.fau.fablab.app.server.configuration.DoorStateConfiguration;
 import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import org.apache.commons.codec.binary.Hex;
 
@@ -22,7 +23,7 @@ public class DoorStateRequest {
     /**
      * holds configuration/information for the key file and hash algorithm
      */
-    private final SpaceApiConfiguration config;
+    private final DoorStateConfiguration config;
 
     /**
      * current door state for this request
@@ -36,7 +37,7 @@ public class DoorStateRequest {
      *
      * @param config Configuration which holds information about keyfile and hashing algorithm.
      */
-    public DoorStateRequest(SpaceApiConfiguration config) {
+    public DoorStateRequest(DoorStateConfiguration config) {
         this.config = config;
     }
 
@@ -48,7 +49,7 @@ public class DoorStateRequest {
      * @param data Contains data with includes timestamp and current door state
      * @return a new instance of the DoorStateRequest class
      */
-    public static DoorStateRequest fromData(SpaceApiConfiguration config, String hash, String data) {
+    public static DoorStateRequest fromData(DoorStateConfiguration config, String hash, String data) {
 
         DoorStateRequest request = new DoorStateRequest(config);
 

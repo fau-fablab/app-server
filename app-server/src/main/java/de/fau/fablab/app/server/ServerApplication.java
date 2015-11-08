@@ -2,6 +2,7 @@ package de.fau.fablab.app.server;
 
 import com.google.common.cache.CacheBuilderSpec;
 import de.fau.fablab.app.rest.core.*;
+import de.fau.fablab.app.server.configuration.DoorStateConfiguration;
 import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import de.fau.fablab.app.server.core.*;
 import de.fau.fablab.app.server.core.drupal.ICalClient;
@@ -101,13 +102,13 @@ class ServerApplication extends Application<ServerConfiguration> {
         //environment.getObjectMapper().configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
         environment.getObjectMapper().setDateFormat(new SimpleDateFormat(Format.DATE_FORMAT));
 
-        // create and register instance of SpaceApiResource
-        SpaceApiConfiguration spaceApiConfiguration = configuration.getSpaceApiConfiguration();
-        final SpaceAPIResource spaceAPIResource = new SpaceAPIResource(
-                spaceApiConfiguration,
+        final DoorStateResource doorStateResource = new DoorStateResource(
+                configuration.getDoorStateConfiguration(),
                 new DoorStateDAO(hibernate.getSessionFactory())
         );
-        environment.jersey().register(spaceAPIResource);
+
+        // create and register instance of SpaceApiResource
+        final SpaceAPIResource spaceAPIResource = new SpaceAPIResource(configuration.getSpaceApiConfiguration());
 
         // create some resources
         environment.jersey().register(new NewsResource(new NewsFacade(new NewsDAO(hibernate.getSessionFactory()))));
@@ -119,6 +120,9 @@ class ServerApplication extends Application<ServerConfiguration> {
                                                            configuration.getCheckoutApiKeyConfiguration().getCheckoutApiKey()));
         environment.jersey().register(new InventoryResource(new InventoryFacade(new InventoryDAO(hibernate.getSessionFactory()))));
         environment.jersey().register(new ToolUsageResource(new ToolUsageFacade(new ToolUsageDAO(hibernate.getSessionFactory()))));
+
+        environment.jersey().register(spaceAPIResource);
+        environment.jersey().register(doorStateResource);
 
         environment.jersey().register(new UserResource());
         environment.jersey().register(new ContactReource());
