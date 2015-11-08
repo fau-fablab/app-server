@@ -43,7 +43,7 @@ database:
     user: db
     password: changeme
     logValidationErrors: false
-    url: jdbc:h2:file:/opt/database/fablab-db
+    url: jdbc:h2:file:src/dist/db/fablab-db
 
     properties:
       hibernate.dialect: org.hibernate.dialect.H2Dialect
