@@ -53,8 +53,8 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private ICalConfiguration ical = new ICalConfiguration();
-    public ICalConfiguration getICalConfiguration() { return ical; }
+    private EventsConfiguration events = new EventsConfiguration();
+    public EventsConfiguration getEventsConfiguration() { return events; }
 
     @Valid
     @NotNull

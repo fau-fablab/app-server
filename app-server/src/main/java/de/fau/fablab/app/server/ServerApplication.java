@@ -85,7 +85,7 @@ class ServerApplication extends Application<ServerConfiguration> {
         OpenErpClient.setConfiguration(configuration.getOpenErpConfiguration());
 
         // configure ICalClient
-        ICalClient.setConfiguration(configuration.getICalConfiguration());
+        ICalClient.setConfiguration(configuration.getEventsConfiguration());
 
         // configure NewsClient
         NewsFeedClient.setConfiguration(configuration.getNewsConfiguration(), configuration.getGeneralDataConfiguration());

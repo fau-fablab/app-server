@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * Provides configuration options for ICal-Feed
  */
-public class ICalConfiguration {
+public class EventsConfiguration {
 
     @NotEmpty
     @JsonProperty

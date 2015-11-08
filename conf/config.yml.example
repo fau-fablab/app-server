@@ -57,7 +57,7 @@ openerp:
     database: production
 
 # endpoint to process events in ical format
-ical:
+events:
     url: https://example.com/termine/ical
     # optional fallback in case 'url' cannot be reached
     fallback: src/dist/calendar.ics

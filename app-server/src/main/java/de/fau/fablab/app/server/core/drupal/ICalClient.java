@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.Date;
 
 import de.fau.fablab.app.rest.core.ICal;
-import de.fau.fablab.app.server.configuration.ICalConfiguration;
+import de.fau.fablab.app.server.configuration.EventsConfiguration;
 
 import net.fortuna.ical4j.data.CalendarBuilder;
 import net.fortuna.ical4j.data.ParserException;
@@ -19,7 +19,7 @@ import net.fortuna.ical4j.model.Calendar;
 public class ICalClient implements ICalInterface {
 
     private static ICalInterface instance;
-    private static ICalConfiguration config = null;
+    private static EventsConfiguration config = null;
 
     private URL iCalUrl;
 
@@ -50,7 +50,7 @@ public class ICalClient implements ICalInterface {
         return instance;
     }
 
-    public static void setConfiguration(ICalConfiguration c) {
+    public static void setConfiguration(EventsConfiguration c) {
         config = c;
     }
 
@@ -62,7 +62,7 @@ public class ICalClient implements ICalInterface {
         if (config == null || !config.validate()) {
             System.err.println("ERROR while initializing ICalClient. Configuration vars missing.\n" +
                     "The configuration (endpoint and iCalUrl) has to be set \n " +
-                    "using the class ICalConfiguration.\n");
+                    "using the class EventsConfiguration.\n");
             System.exit(1);
         }
 
