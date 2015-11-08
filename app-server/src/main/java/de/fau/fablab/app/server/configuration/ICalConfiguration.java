@@ -10,35 +10,23 @@ public class ICalConfiguration {
 
     @NotEmpty
     @JsonProperty
-    private String endpoint;
-
-    @NotEmpty
-    @JsonProperty
-    private String icalUrl;
+    private String url;
 
     @NotEmpty
     @JsonProperty
     private String fallback;
 
     public boolean validate() {
-        if (endpoint == null || endpoint.isEmpty() || icalUrl == null || icalUrl.isEmpty()) return false;
+        if (url == null || url.isEmpty()) return false;
         return true;
     }
 
-    public String getEndpoint() {
-        return endpoint;
+    public String getUrl() {
+        return url;
     }
 
-    public void setEndpoint(String endpoint) {
-        this.endpoint = endpoint;
-    }
-
-    public String getIcalUrl() {
-        return icalUrl;
-    }
-
-    public void setIcalUrl(String icalUrl) {
-        this.icalUrl = icalUrl;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getFallback() {

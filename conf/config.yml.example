@@ -56,9 +56,10 @@ openerp:
     hostname: https://example.com
     database: production
 
+# endpoint to process events in ical format
 ical:
-    endpoint: https://example.com
-    icalUrl: /termine/ical
+    url: https://example.com/termine/ical
+    # optional fallback in case 'url' cannot be reached
     fallback: src/dist/calendar.ics
 
 drupalNews:

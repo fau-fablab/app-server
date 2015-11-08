@@ -148,11 +148,11 @@ public class ICalClient implements ICalInterface {
      */
     private void updateEvents() {
         try {
-            iCalUrl = new URL(config.getEndpoint() + config.getIcalUrl());
+            iCalUrl = new URL(config.getUrl());
         } catch (MalformedURLException e) {
             System.err.println("ERROR - MalformedURLException while updating Events. \n" +
                     "The Reason is : " + e.getMessage() + "\n" +
-                    "ICalUrl is : " + config.getEndpoint() + config.getIcalUrl());
+                    "URL: " + config.getUrl());
         }
 
         BufferedReader reader;
@@ -163,7 +163,7 @@ public class ICalClient implements ICalInterface {
         } catch (IOException e) {
             System.err.println("ERROR - IOException while updating Events. \n" +
                     "The Reason is : "+e.getMessage()+"\n"+
-                    "ICalUrl is : " + config.getEndpoint() + config.getIcalUrl() + "\n Try fallback...!");
+                    "URL: " + config.getUrl() + "\n Try fallback...!");
 
             // BEGIN - FALLBACK FOR SERVER DOWNTIME
             try {
@@ -175,7 +175,7 @@ public class ICalClient implements ICalInterface {
             } catch (IOException e1) {
                 System.err.println("ERROR - IOException while updating Events. \n" +
                         "The Reason is : " + e.getMessage() + "\n" +
-                        "ICalUrl is : " + config.getEndpoint() + config.getIcalUrl());
+                        "URL: " + config.getUrl());
             } catch (ParserException e1) {
                 System.err.println("ERROR - ParserException while updating Events. \n" +
                         "The Reason is : "+e.getMessage());
