@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.security;
 
-import de.fau.fablab.app.server.configuration.AdminConfiguration;
+import de.fau.fablab.app.server.configuration.AdminInterfaceConfiguration;
 import org.eclipse.jetty.security.MappedLoginService;
 import org.eclipse.jetty.server.UserIdentity;
 import org.eclipse.jetty.util.security.Password;
@@ -13,7 +13,7 @@ import java.io.IOException;
  */
 public class AdminMappedLoginService extends MappedLoginService
 {
-    public AdminMappedLoginService(final AdminConfiguration admin)
+    public AdminMappedLoginService(final AdminInterfaceConfiguration admin)
     {
         if (admin == null || !admin.validate())
         {

@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.security;
 
-import de.fau.fablab.app.server.configuration.AdminConfiguration;
+import de.fau.fablab.app.server.configuration.AdminInterfaceConfiguration;
 import org.eclipse.jetty.security.ConstraintMapping;
 import org.eclipse.jetty.security.ConstraintSecurityHandler;
 import org.eclipse.jetty.security.authentication.BasicAuthenticator;
@@ -16,7 +16,7 @@ public class AdminConstraintSecurityHandler extends ConstraintSecurityHandler
 {
     private static final String ADMIN_ROLE = "admin";
 
-    public AdminConstraintSecurityHandler(AdminConfiguration admin)
+    public AdminConstraintSecurityHandler(AdminInterfaceConfiguration admin)
     {
         //create constraint for admin with authentication
         final Constraint constraint = new Constraint(Constraint.__BASIC_AUTH, ADMIN_ROLE);

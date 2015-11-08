@@ -5,7 +5,6 @@ import de.fau.fablab.app.rest.core.User;
 import de.fau.fablab.app.server.configuration.*;
 import io.dropwizard.Configuration;
 import io.dropwizard.db.DataSourceFactory;
-import io.dropwizard.server.ServerFactory;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -42,8 +41,8 @@ class ServerConfiguration extends Configuration
     @Valid
     @NotNull
     @JsonProperty
-    private AdminConfiguration admin = new AdminConfiguration();
-    public AdminConfiguration getAdminConfiguration() { return admin; }
+    private AdminInterfaceConfiguration adminInterface = new AdminInterfaceConfiguration();
+    public AdminInterfaceConfiguration getAdminInterfaceConfiguration() { return adminInterface; }
 
     @Valid
     @NotNull

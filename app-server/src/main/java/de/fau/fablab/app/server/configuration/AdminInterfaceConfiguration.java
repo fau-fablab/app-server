@@ -6,7 +6,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 /**
  * This class represents a user, that is allowed to use the admin panel.
  */
-public class AdminConfiguration {
+public class AdminInterfaceConfiguration {
 
     @NotEmpty
     @JsonProperty

@@ -2,8 +2,6 @@ package de.fau.fablab.app.server;
 
 import com.google.common.cache.CacheBuilderSpec;
 import de.fau.fablab.app.rest.core.*;
-import de.fau.fablab.app.server.configuration.DoorStateConfiguration;
-import de.fau.fablab.app.server.configuration.SpaceApiConfiguration;
 import de.fau.fablab.app.server.core.*;
 import de.fau.fablab.app.server.core.drupal.ICalClient;
 import de.fau.fablab.app.server.core.openerp.OpenErpClient;
@@ -142,7 +140,7 @@ class ServerApplication extends Application<ServerConfiguration> {
         updateProductDatabaseTask.execute(null, null);
 
         //set the security handler for admin resources
-        environment.admin().setSecurityHandler(new AdminConstraintSecurityHandler(configuration.getAdminConfiguration()));
+        environment.admin().setSecurityHandler(new AdminConstraintSecurityHandler(configuration.getAdminInterfaceConfiguration()));
 
         //Log resource inside admin environment
         final DropwizardResourceConfig dropwizardResourceConfig = new DropwizardResourceConfig(environment.metrics());
@@ -172,7 +170,7 @@ class ServerApplication extends Application<ServerConfiguration> {
         PushFacade.getInstance().setDao(new PushDAO(hibernate.getSessionFactory()));
         environment.jersey().register(new PushResource());
 
-        UpdateDatabaseManager updateDatabaseManager = new UpdateDatabaseManager(configuration.getAdminConfiguration(), configuration.getServerFactory());
+        UpdateDatabaseManager updateDatabaseManager = new UpdateDatabaseManager(configuration.getAdminInterfaceConfiguration(), configuration.getServerFactory());
         environment.lifecycle().manage(updateDatabaseManager);
     }
 

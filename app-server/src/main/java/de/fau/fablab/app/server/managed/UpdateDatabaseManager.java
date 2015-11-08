@@ -1,6 +1,6 @@
 package de.fau.fablab.app.server.managed;
 
-import de.fau.fablab.app.server.configuration.AdminConfiguration;
+import de.fau.fablab.app.server.configuration.AdminInterfaceConfiguration;
 import io.dropwizard.jetty.HttpConnectorFactory;
 import io.dropwizard.lifecycle.Managed;
 import io.dropwizard.server.DefaultServerFactory;
@@ -33,10 +33,10 @@ public class UpdateDatabaseManager implements Managed {
     CloseableHttpClient httpClient;
     HttpClientContext httpClientContext;
 
-    public UpdateDatabaseManager(AdminConfiguration adminConfiguration, ServerFactory serverFactory) {
+    public UpdateDatabaseManager(AdminInterfaceConfiguration adminInterfaceConfiguration, ServerFactory serverFactory) {
 
-        this.username = adminConfiguration.getUsername();
-        this.password = adminConfiguration.getPassword();
+        this.username = adminInterfaceConfiguration.getUsername();
+        this.password = adminInterfaceConfiguration.getPassword();
         this.host = ((HttpConnectorFactory) ((DefaultServerFactory) serverFactory).getAdminConnectors().get(0)).getBindHost();
         this.port = ((HttpConnectorFactory) ((DefaultServerFactory) serverFactory).getAdminConnectors().get(0)).getPort();
         httpClient = HttpClients.custom().build();
