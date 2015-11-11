@@ -63,8 +63,8 @@ if [ "$(basename $0)" == "$(basename ${BASH_SOURCE})" ] ; then
             docker restart "${CONTAINER}"
         }
         function clean() {
-            read -p "Do you really want to delete the container including ALL data? [Y/n] "
-            if [ "$REPLY" == "y" ] || [ -z $REPLY ]; then
+            read -p "Do you really want to delete the container including ALL data? [y/N] "
+            if [ "$REPLY" == "n" ]; then
                 docker rm -v "${CONTAINER}"
             fi
         }
