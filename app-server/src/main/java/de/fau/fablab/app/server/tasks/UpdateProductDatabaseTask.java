@@ -47,7 +47,7 @@ public class UpdateProductDatabaseTask extends Task {
                 LOGGER.info("Initializing Product and Category DAO SUCCESSFUL");
             } catch (Exception e) {
                 transaction.rollback();
-                LOGGER.error("Initializing Product and Category DAO ERROR!");
+                LOGGER.error("Initializing Product and Category DAO ERROR!", e);
                 throw new RuntimeException("Unable to update Product Database \n\n"+e.getMessage());
             }
         } finally {

@@ -9,8 +9,8 @@ import java.util.List;
 
 public class CategoryDAO extends AbstractDAO<Category> {
 
-
-    private static final String QUERY_DELETE_ALL = "delete FROM Category";
+    private static final String QUERY_DELETE_ALL_1 = "delete FROM Category_child_categories";
+    private static final String QUERY_DELETE_ALL_2 = "delete FROM Category";
     private static final String QUERY_FIND_ALL = "FROM Category";
 
 
@@ -36,8 +36,11 @@ public class CategoryDAO extends AbstractDAO<Category> {
     }
 
     public void deleteAll(){
-        super.currentSession().createQuery(QUERY_DELETE_ALL).executeUpdate();
+        // we cannot delete via Hibernate HDL because it doesn't handle deletion of many-to-one fields
+        // https://stackoverflow.com/questions/3492453/hibernate-and-delete-all#3492613
+        // iterate over categories and delete them individually
+        for (Category c: findAll()) {
+            delete(c.getId());
+	}
     }
-
-
 }
