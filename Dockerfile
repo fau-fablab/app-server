@@ -22,4 +22,4 @@ RUN ./gradlew build
 EXPOSE 80 8081
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ./gradlew run
+CMD ["./gradlew", "run"]
