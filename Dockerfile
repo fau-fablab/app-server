@@ -5,8 +5,9 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en  
 ENV LC_ALL en_US.UTF-8
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-	openjdk-8-jdk sudo
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        openjdk-8-jdk sudo
 
 RUN addgroup --system --gid=403 fablab && adduser --group --system fablab --uid=403
 

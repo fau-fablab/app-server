@@ -16,4 +16,4 @@ echo message: $MESSAGE
 echo hash: $HASH
 echo url: $URL
 
-wget --no-check-certificate -O - "$URL"
+curl --insecure "$URL"
