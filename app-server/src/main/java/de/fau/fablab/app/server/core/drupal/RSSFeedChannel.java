@@ -1,14 +1,18 @@
 package de.fau.fablab.app.server.core.drupal;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class RSSFeedChannel {
 
     private String title;
-    private String link;
+//    BUG: https://github.com/FasterXML/jackson-dataformat-xml/issues/65
+//    Jackson cannot handle that there is a <atom:link> and a <link> element at the same time. We are only interested in the latter.
+//     private String link;
     private String description;
     private String language;
 
@@ -17,9 +21,9 @@ public class RSSFeedChannel {
 
     public RSSFeedChannel() {}
 
-    public RSSFeedChannel(String title, String link, String description, String language, List<RSSFeedItem> item) {
+    public RSSFeedChannel(String title, /*String link,*/ String description, String language, List<RSSFeedItem> item) {
         this.title = title;
-        this.link = link;
+//         this.link = link;
         this.description = description;
         this.language = language;
         this.item = item;
@@ -33,13 +37,13 @@ public class RSSFeedChannel {
         this.title = title;
     }
 
-    public String getLink() {
-        return link;
-    }
+//     public String getLink() {
+//         return link;
+//     }
 
-    public void setLink(String link) {
-        this.link = link;
-    }
+//     public void setLink(String link) {
+//         this.link = link;
+//     }
 
     public String getDescription() {
         return description;
@@ -66,6 +70,6 @@ public class RSSFeedChannel {
     }
 
     public String toString() {
-        return getTitle() + ", " + getLink();
+        return getTitle();
     }
 }

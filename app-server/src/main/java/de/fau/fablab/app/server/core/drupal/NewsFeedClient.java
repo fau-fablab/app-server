@@ -274,7 +274,8 @@ public class NewsFeedClient implements NewsInterface {
         String imageLink = HTMLHelper.extractImageLink(doc);
 
         News news = new News();
-        news.setId(Long.parseLong(extractId(item.getGuid())));
+        // FIXME this is horribly wrong, but we don't get a numeric GUID:
+        news.setId(item.getGuid().hashCode());
         news.setTitle(item.getTitle());
         news.setDescription(HTMLHelper.parseBody(doc));
         news.setDescriptionShort(HTMLHelper.removeHTML(doc));
@@ -285,10 +286,6 @@ public class NewsFeedClient implements NewsInterface {
         news.setLinkToPreviewImage(imageLink);
         news.setCategory(item.getCategory());
         return news;
-    }
-
-    private String extractId(String guid) {
-        return guid.substring(0, guid.indexOf(' '));
     }
 
     private RSSFeed tryFallback() throws IOException {
